@@ -31,7 +31,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [Code on Github](https://github.com/tip-calculator-app)
-- Live Site URL: [Live demo](https://github.io/abdo-kotb/tip-calculator-app)
+- Live Site URL: [Live demo](https://abdo-kotb.github.io/tip-calculator-app/)
 
 ## My process
 
