@@ -1,0 +1,291 @@
+:root {
+  --primary: hsl(183, 100%, 15%);
+  --secondary: hsl(172, 67%, 45%);
+  --secondary-light: hsl(172deg 67% 70%);
+  --label: hsl(186, 14%, 43%);
+  --placeholder: hsl(184, 14%, 56%);
+  --body: hsl(185, 41%, 84%);
+  --input-bg: hsl(189, 41%, 97%);
+  --white: hsl(0, 0%, 100%);
+  --logo: hsl(180deg 25% 32%);
+  --error: hsl(4deg 90% 58%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Space Mono', monospace;
+  font-size: 2.4rem;
+  background-color: var(--body);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 4.8rem;
+  height: 100vh;
+  font-weight: bold;
+}
+
+button {
+  cursor: pointer;
+}
+
+h1 {
+  font-size: inherit;
+  color: var(--logo);
+  letter-spacing: 5px;
+}
+
+main {
+  padding: 3.2rem;
+  background-color: var(--white);
+  width: 100rem;
+  max-width: 90%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3.2rem;
+  border-radius: 15px;
+}
+
+.bill-input,
+.tip-select {
+  margin-bottom: 3.6rem;
+}
+
+.bill-input {
+  padding-top: 2.4rem;
+}
+
+.input-text {
+  display: block;
+  font-size: 1.6rem;
+  color: var(--label);
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+input,
+button {
+  font-size: inherit;
+  font-family: inherit;
+  height: 4.8rem;
+  padding: 0 1.6rem;
+  border: none;
+  border-radius: 5px;
+}
+
+/* Hiding arrows from number inputs */
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type='number'] {
+  -moz-appearance: textfield;
+}
+
+input {
+  width: 100%;
+  background-color: var(--input-bg);
+  outline: none;
+  text-align: right;
+  caret-color: var(--secondary);
+  background-repeat: no-repeat;
+  background-position-x: 1.6rem;
+  background-position-y: center;
+}
+
+input:focus {
+  box-shadow: 0 0 0 2px var(--secondary);
+}
+
+input,
+.options * {
+  font-weight: 700;
+}
+
+#bill {
+  background-image: url('./images/icon-dollar.svg');
+}
+
+#people {
+  background-image: url('./images//icon-person.svg');
+}
+
+input::placeholder {
+  color: var(--placeholder);
+}
+
+.options {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.6rem;
+}
+
+.options button {
+  background-color: var(--primary);
+  color: var(--white);
+  transition: 0.3s;
+}
+
+.tip-btn.active {
+  background-color: var(--secondary);
+  color: var(--primary);
+}
+
+button:hover {
+  background-color: var(--secondary-light);
+  color: var(--primary);
+}
+
+.custom::placeholder {
+  text-align: center;
+}
+
+.count-input {
+  padding-bottom: 2.4rem;
+}
+
+.total {
+  background-color: var(--primary);
+  display: flex;
+  flex-direction: column;
+  padding: 4.8rem 3.2rem 3.2rem;
+  border-radius: 15px;
+}
+
+.tip-count-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.tip-count-text {
+  font-size: 1.4rem;
+  color: var(--white);
+  margin-bottom: 4.8rem;
+}
+
+.tip-count-text span {
+  font-weight: normal;
+  color: var(--placeholder);
+}
+
+.tip-amount,
+.total-amount {
+  font-size: 3.6rem;
+  color: var(--secondary);
+}
+
+.reset {
+  margin-top: auto;
+  font-weight: bold;
+  background-color: var(--secondary-light);
+  color: var(--primary);
+  opacity: 0.3;
+  transition: 0.3s;
+}
+
+.reset.active {
+  background-color: var(--secondary);
+}
+
+.reset:hover,
+.reset.active {
+  opacity: 1;
+}
+
+.attribution {
+  font-size: 1.4rem;
+}
+
+.attribution a:link,
+.attribution a:visited {
+  color: var(--primary);
+  text-decoration: none;
+  position: relative;
+}
+
+.attribution a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 1px;
+  left: 0;
+  bottom: 0;
+  transition: 0.3s;
+  background-color: var(--primary);
+}
+
+.attribution a:hover::after {
+  width: 100%;
+}
+
+@media (max-width: 90em) {
+  body {
+    margin-top: 8rem;
+    margin-bottom: 8rem;
+    height: auto;
+  }
+}
+
+@media (max-width: 62em) {
+  main {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 36em) {
+  html {
+    font-size: 56.25%;
+  }
+
+  .options {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .attribution {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 23em) {
+  html {
+    font-size: 43.75%;
+  }
+
+  .attribution {
+    font-size: 1rem;
+  }
+}
+
+/* ERROR STYLES */
+
+.input-text.error::after {
+  content: "Can't be zero";
+  position: absolute;
+  right: 0;
+  font-size: 1.6rem;
+  font-weight: normal;
+  color: var(--error);
+}
+
+.people-label.error::after {
+  content: "Can't be zero or decimal";
+  font-size: 1.4rem;
+}
+
+input.error {
+  box-shadow: 0 0 0 2px var(--error);
+}
